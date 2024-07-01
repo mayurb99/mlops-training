@@ -1,0 +1,128 @@
+blocks:
+  completed_pipeline_runs_daily_homework_03_i2:
+    configuration:
+      chart_type: time series line chart
+      group_by:
+      - execution_date
+      metrics:
+      - aggregation: count_distinct
+        column: id
+      time_interval: day
+    data_source:
+      pipeline_uuid: homework_03
+      type: pipeline_runs
+    name: Completed pipeline runs daily
+    type: chart
+    uuid: completed_pipeline_runs_daily_homework_03_i2
+  failed_pipeline_runs_daily_homework_03_g7:
+    configuration:
+      chart_type: time series line chart
+      group_by:
+      - execution_date
+      metrics:
+      - aggregation: count_distinct
+        column: id
+      time_interval: day
+    data_source:
+      pipeline_uuid: homework_03
+      type: pipeline_runs
+    name: Failed pipeline runs daily
+    type: chart
+    uuid: failed_pipeline_runs_daily_homework_03_g7
+  pastel_shield:
+    name: pastel shield
+    type: chart
+    uuid: pastel_shield
+  pipeline_run_status_homework_03_c8:
+    configuration:
+      chart_style: horizontal
+      chart_type: bar chart
+      group_by:
+      - status
+      metrics:
+      - aggregation: count_distinct
+        column: id
+      y_sort_order: descending
+    data_source:
+      pipeline_uuid: homework_03
+      type: pipeline_runs
+    error: null
+    name: Pipeline run status
+    name_new: Pipeline run status
+    skip_render: false
+    type: chart
+    uuid: pipeline_run_status_homework_03_c8
+  pipeline_runs_daily_homework_03_b7:
+    configuration:
+      chart_type: time series line chart
+      group_by:
+      - execution_date
+      metrics:
+      - aggregation: count_distinct
+        column: id
+      time_interval: day
+    data_source:
+      pipeline_uuid: homework_03
+      type: pipeline_runs
+    name: Pipeline runs daily
+    type: chart
+    uuid: pipeline_runs_daily_homework_03_b7
+  trigger_active_status_homework_03_m3:
+    configuration:
+      chart_type: bar chart
+      group_by:
+      - status
+      metrics:
+      - aggregation: count_distinct
+        column: id
+      y_sort_order: descending
+    data_source:
+      pipeline_uuid: homework_03
+      type: pipeline_schedules
+    name: Trigger active status
+    type: chart
+    uuid: trigger_active_status_homework_03_m3
+  trigger_frequency_homework_03_y7:
+    configuration:
+      chart_style: horizontal
+      chart_type: bar chart
+      group_by:
+      - schedule_interval
+      metrics:
+      - aggregation: count_distinct
+        column: id
+      y_sort_order: descending
+    data_source:
+      pipeline_uuid: homework_03
+      type: pipeline_schedules
+    name: Trigger frequency
+    type: chart
+    uuid: trigger_frequency_homework_03_y7
+  trigger_types_homework_03_t7:
+    configuration:
+      chart_type: pie chart
+      group_by:
+      - schedule_type
+    data_source:
+      pipeline_uuid: homework_03
+      type: pipeline_schedules
+    name: Trigger types
+    type: chart
+    uuid: trigger_types_homework_03_t7
+layout:
+- - block_uuid: trigger_active_status_homework_03_m3
+    width: 1
+  - block_uuid: trigger_types_homework_03_t7
+    width: 1
+  - block_uuid: trigger_frequency_homework_03_y7
+    width: 2
+- - block_uuid: pipeline_run_status_homework_03_c8
+    width: 1
+  - block_uuid: pipeline_runs_daily_homework_03_b7
+    width: 2
+- - block_uuid: completed_pipeline_runs_daily_homework_03_i2
+    width: 1
+  - block_uuid: failed_pipeline_runs_daily_homework_03_g7
+    width: 1
+- - block_uuid: pastel_shield
+    width: 1

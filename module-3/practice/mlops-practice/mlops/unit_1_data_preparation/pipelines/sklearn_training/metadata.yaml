@@ -1,0 +1,105 @@
+blocks:
+- all_upstream_blocks_executed: true
+  color: null
+  configuration:
+    file_source:
+      path: unit_1_data_preparation/global_data_products/training_set.py
+    global_data_product:
+      uuid: test
+  downstream_blocks:
+  - tuning_hyperparameter
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: training_set
+  retry_config: null
+  status: executed
+  timeout: null
+  type: global_data_product
+  upstream_blocks: []
+  uuid: training_set
+- all_upstream_blocks_executed: true
+  color: teal
+  configuration:
+    dynamic: true
+    file_source:
+      path: unit_1_data_preparation/custom/model_load.py
+  downstream_blocks:
+  - tuning_hyperparameter
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: model load
+  retry_config: null
+  status: executed
+  timeout: null
+  type: custom
+  upstream_blocks: []
+  uuid: model_load
+- all_upstream_blocks_executed: true
+  color: null
+  configuration:
+    file_source:
+      path: unit_1_data_preparation/transformers/tuning_hyperparameter.py
+  downstream_blocks:
+  - sklearn
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: tuning hyperparameter
+  retry_config: null
+  status: executed
+  timeout: null
+  type: transformer
+  upstream_blocks:
+  - training_set
+  - model_load
+  uuid: tuning_hyperparameter
+- all_upstream_blocks_executed: true
+  color: null
+  configuration:
+    file_source:
+      path: unit_1_data_preparation/data_exporters/sklearn.py
+  downstream_blocks: []
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: sklearn
+  retry_config: null
+  status: executed
+  timeout: null
+  type: data_exporter
+  upstream_blocks:
+  - tuning_hyperparameter
+  uuid: sklearn
+cache_block_output_in_memory: false
+callbacks: []
+concurrency_config: {}
+conditionals: []
+created_at: '2024-06-25 10:00:05.873037+00:00'
+data_integration: null
+description: null
+executor_config: {}
+executor_count: 1
+executor_type: null
+extensions: {}
+name: sklearn training
+notification_config: {}
+remote_variables_dir: null
+retry_config: {}
+run_pipeline_in_one_process: false
+settings:
+  triggers: null
+spark_config: {}
+tags: []
+type: python
+uuid: sklearn_training
+variables:
+  max_evaluations: 50
+  random_state: 7
+variables_dir: /home/src/mage_data/unit_1_data_preparation
+widgets: []
