@@ -1,0 +1,104 @@
+blocks:
+- all_upstream_blocks_executed: true
+  color: null
+  configuration:
+    file_path: homework_module4/data_loaders/load_data.py
+    file_source:
+      path: homework_module4/data_loaders/load_data.py
+  downstream_blocks:
+  - load_model
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: Load_Data
+  retry_config: null
+  status: executed
+  timeout: null
+  type: data_loader
+  upstream_blocks: []
+  uuid: load_data
+- all_upstream_blocks_executed: true
+  color: null
+  configuration:
+    file_path: homework_module4/transformers/load_model.py
+    file_source:
+      path: homework_module4/transformers/load_model.py
+  downstream_blocks:
+  - add_reuslt_df
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: load_model
+  retry_config: null
+  status: executed
+  timeout: null
+  type: transformer
+  upstream_blocks:
+  - load_data
+  uuid: load_model
+- all_upstream_blocks_executed: true
+  color: null
+  configuration:
+    file_source:
+      path: homework_module4/transformers/add_reuslt_df.py
+  downstream_blocks:
+  - save_op
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: Add_Reuslt_df
+  retry_config: null
+  status: executed
+  timeout: null
+  type: transformer
+  upstream_blocks:
+  - load_model
+  uuid: add_reuslt_df
+- all_upstream_blocks_executed: true
+  color: null
+  configuration:
+    file_source:
+      path: homework_module4/data_exporters/save_op.py
+  downstream_blocks: []
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: save_op
+  retry_config: null
+  status: executed
+  timeout: null
+  type: data_exporter
+  upstream_blocks:
+  - add_reuslt_df
+  uuid: save_op
+cache_block_output_in_memory: false
+callbacks: []
+concurrency_config: {}
+conditionals: []
+created_at: '2024-07-05 06:56:09.766121+00:00'
+data_integration: null
+description: Homework 04 bonus pipeline
+executor_config: {}
+executor_count: 1
+executor_type: null
+extensions: {}
+name: Module4_homework_bonus
+notification_config: {}
+remote_variables_dir: null
+retry_config: {}
+run_pipeline_in_one_process: false
+settings:
+  triggers: null
+spark_config: {}
+tags: []
+type: python
+uuid: module4_homework_bonus
+variables:
+  month: '04'
+  year: 2023
+variables_dir: /home/src/mage_data/homework_module4
+widgets: []

@@ -1,0 +1,1 @@
+1) Running script via docker to store the artifact to 
