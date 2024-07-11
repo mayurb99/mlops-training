@@ -1,0 +1,15 @@
+{
+  "id": "df4a92e0-8dab-4c36-b173-c2935e56b8a4",
+  "name": "Python-evident",
+  "description": "My evident python",
+  "dashboard": {
+    "name": "Python-evident",
+    "panels": [],
+    "tabs": [],
+    "tab_id_to_panel_ids": {}
+  },
+  "team_id": null,
+  "date_from": null,
+  "date_to": null,
+  "created_at": "2024-07-09T15:16:30.222180"
+}
