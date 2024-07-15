@@ -1,0 +1,6 @@
+ip_stream_name = "stg_ride_events"
+op_stream_name = "stg_ride_predictions"
+bucket_name = "stg-mlflow-models-code-owners"
+ecr_repo_name = "stg_stream_model_duration"
+lambda_function_local_path="../lambda_function.py"
+docker_image_local_path="../Dockerfile"
